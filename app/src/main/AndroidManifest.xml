@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUserV3">
         <activity
+            android:name=".views.activities.UserDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".views.activities.SplashActivity"
-            android:theme="@style/Theme.Splash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
