@@ -1,4 +1,4 @@
-package com.ardnn.githubuserv3
+package com.ardnn.githubuserv3.views.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.ardnn.githubuserv3.R
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
