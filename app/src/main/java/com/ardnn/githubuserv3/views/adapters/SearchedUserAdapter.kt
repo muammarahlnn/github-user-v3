@@ -32,16 +32,14 @@ class SearchedUserAdapter(
 
     inner class ViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        init {
-            itemView.setOnClickListener {
-                clickListener.onItemClicked(userList[adapterPosition])
-            }
-        }
 
         internal fun onBind(user: UserResponse) {
             with(binding) {
+                // set data to widgets
                 Helper.setImageGlide(itemView.context, user.avatarUrl, ivAva)
                 tvUsername.text = user.username
+
+                // set click listener
                 binding.root.setOnClickListener {
                     clickListener.onItemClicked(userList[adapterPosition])
                 }
