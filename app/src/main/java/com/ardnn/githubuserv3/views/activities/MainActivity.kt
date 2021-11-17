@@ -1,6 +1,7 @@
 package com.ardnn.githubuserv3.views.activities
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -127,6 +128,8 @@ class MainActivity : AppCompatActivity(), ClickListener {
     }
 
     override fun onItemClicked(user: UserResponse) {
-        Toast.makeText(this, user.username, Toast.LENGTH_SHORT).show()
+        val toUserDetail = Intent(this, UserDetailActivity::class.java)
+        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, user.username)
+        startActivity(toUserDetail)
     }
 }

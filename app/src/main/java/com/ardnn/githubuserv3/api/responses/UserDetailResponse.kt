@@ -7,22 +7,22 @@ data class UserDetailResponse(
     val username: String = "",
 
     @field:SerializedName("name")
-    val name: String = "",
+    val name: String? = "",
 
     @field:SerializedName("location")
-    val location: String = "",
+    val location: String? = "",
 
     @field:SerializedName("company")
-    val company: String = "",
+    val company: String? = "",
 
     @field:SerializedName("public_repos")
-    val repositories: String = "",
+    val repositories: Int? = 0,
 
     @field:SerializedName("followers")
-    val followers: String = "",
+    val followers: Int? = 0,
 
     @field:SerializedName("following")
-    val following: String = "",
+    val following: Int? = 0,
 
     @field:SerializedName("avatar_url")
     val avatarUrl: String = "",
