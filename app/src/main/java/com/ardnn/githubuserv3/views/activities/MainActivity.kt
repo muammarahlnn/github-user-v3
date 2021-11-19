@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -30,6 +32,10 @@ class MainActivity : AppCompatActivity(), ClickListener {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
+        // set action bar
+        setSupportActionBar(binding.toolbarMain)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // set recyclerview
         val layoutManager = LinearLayoutManager(this)
@@ -60,6 +66,27 @@ class MainActivity : AppCompatActivity(), ClickListener {
             }
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.itemToolbarSetting -> {
+                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.itemToolbarFavorite -> {
+                Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else ->  {
+                true
+            }
+        }
     }
 
     private fun subscribe() {
