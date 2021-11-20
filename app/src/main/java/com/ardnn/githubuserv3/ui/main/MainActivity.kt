@@ -18,6 +18,7 @@ import com.ardnn.githubuserv3.api.responses.UserResponse
 import com.ardnn.githubuserv3.databinding.ActivityMainBinding
 import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.Helper
+import com.ardnn.githubuserv3.ui.favorite.FavoriteActivity
 import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 class MainActivity : AppCompatActivity(), ClickListener {
@@ -79,7 +80,9 @@ class MainActivity : AppCompatActivity(), ClickListener {
                 true
             }
             R.id.itemToolbarFavorite -> {
-                Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show()
+                // to favorite user
+                val toFavorite = Intent(this, FavoriteActivity::class.java)
+                startActivity(toFavorite)
                 true
             }
             else ->  {
