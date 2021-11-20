@@ -1,4 +1,4 @@
-package com.ardnn.githubuserv3.views.fragments
+package com.ardnn.githubuserv3.ui.userdetail.userfoll
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,10 +13,7 @@ import com.ardnn.githubuserv3.api.responses.UserResponse
 import com.ardnn.githubuserv3.databinding.FragmentUserFollBinding
 import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.Helper
-import com.ardnn.githubuserv3.viewmodels.UserFollViewModel
-import com.ardnn.githubuserv3.viewmodels.UserFollViewModelFactory
-import com.ardnn.githubuserv3.views.activities.UserDetailActivity
-import com.ardnn.githubuserv3.views.adapters.UserFollAdapter
+import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 
 class UserFollFragment : Fragment(), ClickListener {

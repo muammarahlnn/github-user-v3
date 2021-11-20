@@ -1,10 +1,9 @@
-package com.ardnn.githubuserv3.views.adapters
+package com.ardnn.githubuserv3.ui.userdetail.userfoll
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.ardnn.githubuserv3.R
-import com.ardnn.githubuserv3.views.fragments.UserFollFragment
 
 class UserFollPagerAdapter(
     private val activity: AppCompatActivity,

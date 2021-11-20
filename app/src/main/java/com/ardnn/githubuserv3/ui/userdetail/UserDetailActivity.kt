@@ -1,4 +1,4 @@
-package com.ardnn.githubuserv3.views.activities
+package com.ardnn.githubuserv3.ui.userdetail
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +9,8 @@ import com.ardnn.githubuserv3.R
 import com.ardnn.githubuserv3.api.responses.UserDetailResponse
 import com.ardnn.githubuserv3.databinding.ActivityUserDetailBinding
 import com.ardnn.githubuserv3.helper.Helper
-import com.ardnn.githubuserv3.viewmodels.UserDetailViewModel
-import com.ardnn.githubuserv3.viewmodels.UserDetailViewModelFactory
-import com.ardnn.githubuserv3.views.adapters.UserFollPagerAdapter
+import com.ardnn.githubuserv3.ui.main.MainActivity
+import com.ardnn.githubuserv3.ui.userdetail.userfoll.UserFollPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class UserDetailActivity : AppCompatActivity(), View.OnClickListener {

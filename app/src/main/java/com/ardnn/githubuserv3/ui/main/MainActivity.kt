@@ -1,4 +1,4 @@
-package com.ardnn.githubuserv3.views.activities
+package com.ardnn.githubuserv3.ui.main
 
 import android.content.Context
 import android.content.Intent
@@ -18,8 +18,7 @@ import com.ardnn.githubuserv3.api.responses.UserResponse
 import com.ardnn.githubuserv3.databinding.ActivityMainBinding
 import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.Helper
-import com.ardnn.githubuserv3.viewmodels.MainViewModel
-import com.ardnn.githubuserv3.views.adapters.SearchedUserAdapter
+import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 class MainActivity : AppCompatActivity(), ClickListener {
 

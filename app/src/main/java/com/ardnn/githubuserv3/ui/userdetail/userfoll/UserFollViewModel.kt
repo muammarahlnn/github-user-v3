@@ -1,4 +1,4 @@
-package com.ardnn.githubuserv3.viewmodels
+package com.ardnn.githubuserv3.ui.userdetail.userfoll
 
 import android.util.Log
 import androidx.lifecycle.LiveData

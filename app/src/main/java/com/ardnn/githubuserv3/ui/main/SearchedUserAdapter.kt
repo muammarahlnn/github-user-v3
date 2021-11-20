@@ -1,22 +1,22 @@
-package com.ardnn.githubuserv3.views.adapters
+package com.ardnn.githubuserv3.ui.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ardnn.githubuserv3.api.responses.UserResponse
-import com.ardnn.githubuserv3.databinding.ItemUserFollBinding
+import com.ardnn.githubuserv3.databinding.ItemUserBinding
 import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.Helper
 
-class UserFollAdapter(
+class SearchedUserAdapter(
     private val userList: List<UserResponse>,
     private val clickListener: ClickListener
-) : RecyclerView.Adapter<UserFollAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<SearchedUserAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemUserFollBinding
+        val binding = ItemUserBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
+
         return ViewHolder(binding)
     }
 
@@ -28,16 +28,13 @@ class UserFollAdapter(
         return userList.size
     }
 
-    inner class ViewHolder(private val binding: ItemUserFollBinding) :
+    inner class ViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         internal fun onBind(user: UserResponse) {
-            with (binding) {
+            with(binding) {
                 // set data to widgets
-                Helper.setImageGlide(
-                    binding.root.context,
-                    user.avatarUrl,
-                    ivAva)
+                Helper.setImageGlide(binding.root.context, user.avatarUrl, ivAva)
                 tvUsername.text = user.username
 
                 // set click listener
@@ -46,7 +43,5 @@ class UserFollAdapter(
                 }
             }
         }
-
     }
-
 }
