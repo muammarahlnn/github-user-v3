@@ -21,7 +21,7 @@ import com.ardnn.githubuserv3.helper.Helper
 import com.ardnn.githubuserv3.ui.favoriteuser.FavoriteUserActivity
 import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
-class MainActivity : AppCompatActivity(), ClickListener {
+class MainActivity : AppCompatActivity(), ClickListener<UserResponse> {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
@@ -156,9 +156,9 @@ class MainActivity : AppCompatActivity(), ClickListener {
         binding.rvUser.adapter = adapter
     }
 
-    override fun onItemClicked(user: UserResponse) {
+    override fun onItemClicked(t: UserResponse) {
         val toUserDetail = Intent(this, UserDetailActivity::class.java)
-        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, user.username)
+        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, t.username)
         startActivity(toUserDetail)
     }
 }

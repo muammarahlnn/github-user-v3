@@ -10,7 +10,7 @@ import com.ardnn.githubuserv3.helper.Helper
 
 class UserFollAdapter(
     private val userList: List<UserResponse>,
-    private val clickListener: ClickListener
+    private val clickListener: ClickListener<UserResponse>
 ) : RecyclerView.Adapter<UserFollAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

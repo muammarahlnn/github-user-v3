@@ -2,15 +2,17 @@ package com.ardnn.githubuserv3.ui.favoriteuser
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ardnn.githubuserv3.database.FavoriteUser
 import com.ardnn.githubuserv3.databinding.ItemUserBinding
+import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.FavoriteUserDiffCallback
 import com.ardnn.githubuserv3.helper.Helper
 
-class FavoriteUserAdapter : RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>(){
+class FavoriteUserAdapter(
+    private val clickListener: ClickListener<FavoriteUser>
+) : RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>(){
 
     private val favoriteUserList = ArrayList<FavoriteUser>()
 
@@ -32,7 +34,7 @@ class FavoriteUserAdapter : RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.onBind(favoriteUserList[position])
     }
 
     override fun getItemCount(): Int {
@@ -53,7 +55,7 @@ class FavoriteUserAdapter : RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>
 
                 // click listener
                 binding.root.setOnClickListener {
-                    Toast.makeText(it.context, favoriteUser.username, Toast.LENGTH_SHORT).show()
+                    clickListener.onItemClicked(favoriteUser)
                 }
             }
         }

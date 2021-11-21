@@ -16,7 +16,7 @@ import com.ardnn.githubuserv3.helper.Helper
 import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 
-class UserFollFragment : Fragment(), ClickListener {
+class UserFollFragment : Fragment(), ClickListener<UserResponse> {
     companion object {
         private const val ARG_SECTION_NUMBER = "section_number"
         private const val ARG_USERNAME = "username"
@@ -120,9 +120,9 @@ class UserFollFragment : Fragment(), ClickListener {
         }
     }
 
-    override fun onItemClicked(user: UserResponse) {
+    override fun onItemClicked(t: UserResponse) {
         val toUserDetail = Intent(requireActivity(), UserDetailActivity::class.java)
-        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, user.username)
+        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, t.username)
         startActivity(toUserDetail)
     }
 
