@@ -1,5 +1,6 @@
 package com.ardnn.githubuserv3.ui.userdetail
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,14 +8,19 @@ import androidx.lifecycle.ViewModel
 import com.ardnn.githubuserv3.api.callbacks.UserDetailCallback
 import com.ardnn.githubuserv3.api.repositories.UserRepository
 import com.ardnn.githubuserv3.api.responses.UserDetailResponse
+import com.ardnn.githubuserv3.database.FavoriteUser
+import com.ardnn.githubuserv3.database.FavoriteUserRepository
 
 class UserDetailViewModel(
-    private val username: String
+    application: Application,
+    username: String
 ) : ViewModel() {
 
     companion object {
         private const val TAG = "UserDetailViewModel"
     }
+
+    private val favoriteUserRepository = FavoriteUserRepository(application)
 
     private val _user = MutableLiveData<UserDetailResponse>()
     val user: LiveData<UserDetailResponse> = _user
@@ -46,5 +52,21 @@ class UserDetailViewModel(
                 Log.d(TAG, message)
             }
         })
+    }
+
+    fun insert(favoriteUser: FavoriteUser) {
+        favoriteUserRepository.insert(favoriteUser)
+    }
+
+    fun delete(favoriteUser: FavoriteUser) {
+        favoriteUserRepository.delete(favoriteUser)
+    }
+
+    suspend fun getFavoriteUser(username: String): FavoriteUser {
+        return favoriteUserRepository.getFavoriteUser(username)
+    }
+
+    suspend fun isFavoriteUserExists(username: String): Boolean {
+        return favoriteUserRepository.isFavoriteUserExists(username)
     }
 }

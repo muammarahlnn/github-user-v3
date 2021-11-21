@@ -1,13 +1,14 @@
 package com.ardnn.githubuserv3.ui.favoriteuser
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ardnn.githubuserv3.database.FavoriteUser
 import com.ardnn.githubuserv3.databinding.ActivityFavoriteUserBinding
 import com.ardnn.githubuserv3.helper.ClickListener
+import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 class FavoriteUserActivity : AppCompatActivity(), ClickListener<FavoriteUser> {
 
@@ -39,6 +40,9 @@ class FavoriteUserActivity : AppCompatActivity(), ClickListener<FavoriteUser> {
     }
 
     override fun onItemClicked(t: FavoriteUser) {
-        Toast.makeText(this, t.username, Toast.LENGTH_SHORT).show()
+        // to user detail
+        val toUserDetail = Intent(this, UserDetailActivity::class.java)
+        toUserDetail.putExtra(UserDetailActivity.EXTRA_USERNAME, t.username)
+        startActivity(toUserDetail)
     }
 }

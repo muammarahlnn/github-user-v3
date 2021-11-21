@@ -26,4 +26,12 @@ class FavoriteUserRepository(application: Application) {
             favoriteUserDao.delete(favoriteUser)
         }
     }
+
+    suspend fun getFavoriteUser(username: String): FavoriteUser {
+        return favoriteUserDao.getFavoriteUser(username)
+    }
+
+    suspend fun isFavoriteUserExists(username: String): Boolean {
+        return favoriteUserDao.isFavoriteUserExists(username)
+    }
 }
