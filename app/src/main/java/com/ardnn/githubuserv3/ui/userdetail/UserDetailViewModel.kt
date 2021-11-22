@@ -62,11 +62,11 @@ class UserDetailViewModel(
         favoriteUserRepository.delete(favoriteUser)
     }
 
-    suspend fun getFavoriteUser(username: String): FavoriteUser {
+    fun getFavoriteUser(username: String): FavoriteUser {
         return favoriteUserRepository.getFavoriteUser(username)
     }
 
-    suspend fun isFavoriteUserExists(username: String): Boolean {
+    fun isFavoriteUserExists(username: String): Boolean {
         return favoriteUserRepository.isFavoriteUserExists(username)
     }
 }

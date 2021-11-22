@@ -14,9 +14,6 @@ import com.ardnn.githubuserv3.helper.Helper
 import com.ardnn.githubuserv3.ui.main.MainActivity
 import com.ardnn.githubuserv3.ui.userdetail.userfoll.UserFollPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.runBlocking
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 class UserDetailActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
@@ -39,9 +36,11 @@ class UserDetailActivity : AppCompatActivity(), View.OnClickListener {
         viewModel = ViewModelProvider(this, UserDetailViewModelFactory(application, username as String))
             .get(UserDetailViewModel::class.java)
 
+        // check if its favorited or not
+        isFavorite = viewModel.isFavoriteUserExists(username)
+
         // subscribe view model
         subscribe()
-
 
         // set view pager
         val userFollPagerAdapter = UserFollPagerAdapter(this, username)
@@ -114,13 +113,8 @@ class UserDetailActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun deleteFavoriteUser() {
-        // get fav user from db
-        var favUser: FavoriteUser
-        runBlocking {
-            favUser = viewModel.getFavoriteUser(user.username)
-        }
-
-        // delete it from db
+        // get fav user from db and delete it
+        val favUser: FavoriteUser = viewModel.getFavoriteUser(user.username)
         viewModel.delete(favUser)
 
         // set icon fav to false and notify user
@@ -138,19 +132,14 @@ class UserDetailActivity : AppCompatActivity(), View.OnClickListener {
                 this@UserDetailActivity,
                 user.avatarUrl,
                 ivAva)
+            btnFavorite.setImageResource(
+                if (isFavorite) R.drawable.ic_favorite_true
+                else R.drawable.ic_favorite_false)
             tvUsername.text = user.username
             tvName.text = user.name ?: "-"
             tvLocation.text  = user.location ?: "-"
             tvCompany.text = user.company ?: "-"
             tvRepositories.text = (user.repositories ?: 0).toString()
-
-            // check if favorite or not
-            runBlocking {
-                isFavorite = viewModel.isFavoriteUserExists(user.username)
-            }
-            btnFavorite.setImageResource(
-                if (isFavorite) R.drawable.ic_favorite_true
-                else R.drawable.ic_favorite_false)
 
             // set tab layout
             val countFolls = intArrayOf(

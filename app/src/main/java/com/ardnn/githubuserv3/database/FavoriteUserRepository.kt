@@ -2,36 +2,48 @@ package com.ardnn.githubuserv3.database
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 
 class FavoriteUserRepository(application: Application) {
     private val favoriteUserDao: FavoriteUserDao =
         FavoriteUserDatabase.getDatabase(application).getFavoriteUserDao()
-    private val executorService: ExecutorService =
-        Executors.newSingleThreadExecutor()
 
     fun getAllFavoriteUsers(): LiveData<List<FavoriteUser>> {
         return favoriteUserDao.getAllFavoriteUsers()
     }
 
     fun insert(favoriteUser: FavoriteUser) {
-        executorService.execute {
+        runBlocking {
             favoriteUserDao.insert(favoriteUser)
         }
     }
 
     fun delete(favoriteUser: FavoriteUser) {
-        executorService.execute {
+        runBlocking {
             favoriteUserDao.delete(favoriteUser)
         }
     }
 
-    suspend fun getFavoriteUser(username: String): FavoriteUser {
-        return favoriteUserDao.getFavoriteUser(username)
+    fun getFavoriteUser(username: String): FavoriteUser {
+        lateinit var favUser: FavoriteUser
+        runBlocking {
+            val temp = async {
+                favoriteUserDao.getFavoriteUser(username)
+            }
+            favUser = temp.await()
+        }
+        return favUser
     }
 
-    suspend fun isFavoriteUserExists(username: String): Boolean {
-        return favoriteUserDao.isFavoriteUserExists(username)
+    fun isFavoriteUserExists(username: String): Boolean {
+        var isExists: Boolean
+        runBlocking {
+            val temp  = async {
+                favoriteUserDao.isFavoriteUserExists(username)
+            }
+            isExists = temp.await()
+        }
+        return isExists
     }
 }
