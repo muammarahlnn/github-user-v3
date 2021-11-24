@@ -14,28 +14,22 @@ class FavoriteUserActivity : AppCompatActivity(), ClickListener<FavoriteUser> {
 
     private lateinit var viewModel: FavoriteUserViewModel
     private lateinit var binding: ActivityFavoriteUserBinding
-    private lateinit var adapter: FavoriteUserAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // initialization
-        viewModel = ViewModelProvider(this, FavoriteUserViewModelFactory(application))
-            .get(FavoriteUserViewModel::class.java)
-        adapter = FavoriteUserAdapter(this)
-
-        // observe favorite user list
-        viewModel.getAllFavoriteUsers().observe(this, { favoriteUserList ->
-            if  (favoriteUserList != null) {
-                adapter.setFavoriteUserList(favoriteUserList)
-            }
-        })
-
         // set recyclerview
         binding.rvUser.layoutManager = LinearLayoutManager(this)
-        binding.rvUser.adapter = adapter
+
+        // observe favorite user list
+        viewModel = ViewModelProvider(this, FavoriteUserViewModelFactory(application))
+            .get(FavoriteUserViewModel::class.java)
+        viewModel.getAllFavoriteUsers().observe(this, { favoriteUserList ->
+            val adapter = FavoriteUserAdapter(favoriteUserList, this)
+            binding.rvUser.adapter = adapter
+        })
 
     }
 
