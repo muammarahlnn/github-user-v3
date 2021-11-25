@@ -3,6 +3,7 @@ package com.ardnn.githubuserv3.ui.favoriteuser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ardnn.githubuserv3.database.FavoriteUser
@@ -29,6 +30,11 @@ class FavoriteUserActivity : AppCompatActivity(), ClickListener<FavoriteUser> {
         viewModel.getAllFavoriteUsers().observe(this, { favoriteUserList ->
             val adapter = FavoriteUserAdapter(favoriteUserList, this)
             binding.rvUser.adapter = adapter
+
+            // show alert to the user if list is empty
+            binding.tvAlert.visibility =
+                if (favoriteUserList.isNullOrEmpty()) View.VISIBLE
+                else View.INVISIBLE
         })
 
     }

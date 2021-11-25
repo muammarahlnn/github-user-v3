@@ -41,6 +41,22 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+        <TextView
+            android:id="@+id/tvAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/not_favorited_yet"
+            android:textAlignment="center"
+            android:textColor="@color/gray_primary"
+            android:textSize="21sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDetail" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvUser"
             android:layout_width="match_parent"
