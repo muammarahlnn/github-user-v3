@@ -19,6 +19,7 @@ import com.ardnn.githubuserv3.databinding.ActivityMainBinding
 import com.ardnn.githubuserv3.helper.ClickListener
 import com.ardnn.githubuserv3.helper.Helper
 import com.ardnn.githubuserv3.ui.favoriteuser.FavoriteUserActivity
+import com.ardnn.githubuserv3.ui.settings.SettingsActivity
 import com.ardnn.githubuserv3.ui.userdetail.UserDetailActivity
 
 class MainActivity : AppCompatActivity(), ClickListener<UserResponse> {
@@ -76,7 +77,9 @@ class MainActivity : AppCompatActivity(), ClickListener<UserResponse> {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.itemToolbarSetting -> {
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show()
+                // to settings
+                val toSettings = Intent(this, SettingsActivity::class.java)
+                startActivity(toSettings)
                 true
             }
             R.id.itemToolbarFavorite -> {

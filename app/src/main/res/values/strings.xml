@@ -32,4 +32,6 @@
     <string name="favorite">Favorite</string>
     <string name="favorite_user">Favorite User</string>
     <string name="button_favorite_user">Button favorite user</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="settings">Settings</string>
 </resources>
