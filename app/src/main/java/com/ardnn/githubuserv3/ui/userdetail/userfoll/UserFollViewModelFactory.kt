@@ -10,7 +10,7 @@ class UserFollViewModelFactory(
 ) : ViewModelProvider.NewInstanceFactory(){
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(UserFollViewModel::class.java)) {
             return UserFollViewModel(section, username) as T
         }
