@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_background"
+    android:background="@color/primary_background"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,25 +16,27 @@
             android:id="@+id/toolbarMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black_primary"
-            app:titleTextColor="@color/white_smoke"
+            android:background="@color/primary"
+            app:titleTextColor="@color/tertiary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/ivLogoApp"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_github_white"
-                android:contentDescription="@string/app_logo" />
+                android:contentDescription="@string/app_logo"
+                app:tint="@color/tertiary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:textColor="@color/white_smoke"
+                android:textColor="@color/tertiary"
                 android:textSize="20sp"
                 android:fontFamily="@font/roboto_medium" />
 
@@ -49,19 +51,19 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:hint="@string/username"
-            android:textColorHint="@color/gray_primary"
-            app:boxStrokeColor="@color/gray_primary"
-            app:hintTextColor="@color/gray_primary"
+            android:textColorHint="@color/secondary"
+            app:boxStrokeColor="@color/secondary"
+            app:hintTextColor="@color/secondary"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_search_white"
-            app:endIconTint="@color/gray_primary"
+            app:endIconTint="@color/secondary"
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_error_outline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
             app:startIconDrawable="@drawable/ic_person_white"
-            app:startIconTint="@color/gray_primary">
+            app:startIconTint="@color/secondary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
@@ -69,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:lines="1"
-                android:textColor="@color/gray_primary"
+                android:textColor="@color/secondary"
                 android:textCursorDrawable="@null"
                 android:imeOptions="actionSearch"/>
 
@@ -81,7 +83,7 @@
             android:layout_height="wrap_content"
             android:text="@string/not_search_yet"
             android:layout_marginHorizontal="24dp"
-            android:textColor="@color/gray_primary"
+            android:textColor="@color/secondary"
             android:textSize="21sp"
             android:textAlignment="center"
             android:fontFamily="@font/roboto_regular"
@@ -97,7 +99,7 @@
             android:layout_height="wrap_content"
             tools:text="@string/users_not_found"
             android:layout_marginHorizontal="24dp"
-            android:textColor="@color/gray_primary"
+            android:textColor="@color/secondary"
             android:textSize="21sp"
             android:textAlignment="center"
             android:fontFamily="@font/roboto_regular"
@@ -124,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="@color/gray_primary"
+            android:indeterminateTint="@color/secondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

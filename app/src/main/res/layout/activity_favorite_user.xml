@@ -10,14 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black_background">
+        android:background="@color/primary_background">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black_primary"
-            app:titleTextColor="@color/white_smoke"
+            android:background="@color/primary"
+            app:titleTextColor="@color/tertiary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,13 +29,14 @@
                 android:layout_height="25dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_arrow_back"
-                android:contentDescription="@string/button_back" />
+                android:contentDescription="@string/button_back"
+                app:tint="@color/tertiary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/favorite_user"
-                android:textColor="@color/white_smoke"
+                android:textColor="@color/tertiary"
                 android:textSize="20sp"
                 android:fontFamily="@font/roboto_medium" />
 
@@ -49,7 +50,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/not_favorited_yet"
             android:textAlignment="center"
-            android:textColor="@color/gray_primary"
+            android:textColor="@color/secondary"
             android:textSize="21sp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -9,15 +9,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black_background"
+        android:background="@color/primary_background"
         tools:context=".UserDetailFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black_primary"
-            app:titleTextColor="@color/white_smoke"
+            android:background="@color/primary"
+            app:titleTextColor="@color/tertiary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,13 +29,14 @@
                 android:layout_height="25dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_arrow_back"
-                android:contentDescription="@string/button_back" />
+                android:contentDescription="@string/button_back"
+                app:tint="@color/tertiary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_user"
-                android:textColor="@color/white_smoke"
+                android:textColor="@color/tertiary"
                 android:textSize="20sp"
                 android:fontFamily="@font/roboto_medium" />
 
@@ -46,7 +47,8 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="24dp"
                 android:src="@drawable/ic_home_white"
-                android:contentDescription="@string/button_home" />
+                android:contentDescription="@string/button_home"
+                app:tint="@color/tertiary" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -86,7 +88,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginHorizontal="24dp"
             android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/white_smoke"
+            android:textColor="@color/tertiary"
             android:textSize="21sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -100,7 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textColor="@color/gray_primary"
+            android:textColor="@color/secondary"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -130,7 +132,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="48dp"
             android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/white_smoke"
+            android:textColor="@color/tertiary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivLocation"
@@ -155,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/white_smoke"
+            android:textColor="@color/tertiary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/tvLocation"
             app:layout_constraintStart_toEndOf="@+id/ivCompany"
@@ -180,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/white_smoke"
+            android:textColor="@color/tertiary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/tvCompany"
             app:layout_constraintStart_toEndOf="@+id/ivRepositories"
@@ -193,7 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="@color/gray_primary"
+            android:indeterminateTint="@color/secondary"
             app:layout_constraintBottom_toTopOf="@+id/tabLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,17 +206,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@color/black_background"
+            android:background="@color/primary_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvRepositories"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/gray_primary"
+            app:tabIndicatorColor="@color/secondary"
             app:tabMaxWidth="0dp"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/white_smoke"
+            app:tabSelectedTextColor="@color/tertiary"
             app:tabTextAppearance="@style/TabLayoutText"
-            app:tabTextColor="@color/gray_primary" />
+            app:tabTextColor="@color/secondary" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp2"
@@ -229,7 +231,7 @@
             android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/black_background"
+            android:background="@color/primary_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarDetail">
 
@@ -238,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:text="@string/unable_to_retrieve_data"
-                android:textColor="@color/gray_primary"
+                android:textColor="@color/secondary"
                 android:textSize="21sp"
                 android:textAlignment="center"
                 android:fontFamily="@font/roboto_regular"

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_primary"
+    android:background="@color/primary"
     tools:context=".ui.splash.SplashActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivLogoApp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_github_white"
@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/app_logo" />
+        android:contentDescription="@string/app_logo"
+        app:tint="@color/tertiary" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,10 +25,10 @@
         android:layout_marginTop="12dp"
         android:text="@string/app_name"
         android:textSize="24sp"
-        android:textColor="@color/white"
+        android:textColor="@color/tertiary"
         android:fontFamily="@font/roboto_medium"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/ivLogoApp"
+        app:layout_constraintStart_toStartOf="@+id/ivLogoApp"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

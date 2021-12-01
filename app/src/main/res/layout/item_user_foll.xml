@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingVertical="12dp"
     android:layout_marginBottom="10dp"
-    android:background="@color/black_background">
+    android:background="@color/primary_background">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivAva"
@@ -27,7 +27,7 @@
         android:ellipsize="end"
         android:fontFamily="@font/roboto_regular"
         android:lines="1"
-        android:textColor="@color/gray_primary"
+        android:textColor="@color/secondary"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ivAva"
