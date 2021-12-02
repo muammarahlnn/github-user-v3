@@ -13,7 +13,7 @@
         android:background="@color/primary_background">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarDetail"
+            android:id="@+id/toolbarFavorite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/primary"
@@ -56,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarDetail" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarFavorite" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvUser"
@@ -66,7 +66,7 @@
             android:layout_marginHorizontal="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarFavorite"
             tools:itemCount="5"
             tools:listitem="@layout/item_user" />
 

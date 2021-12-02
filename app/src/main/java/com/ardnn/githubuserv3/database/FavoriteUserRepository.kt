@@ -13,6 +13,17 @@ class FavoriteUserRepository(application: Application) {
         return favoriteUserDao.getAllFavoriteUsers()
     }
 
+    fun getFavoriteUser(username: String): FavoriteUser {
+        lateinit var favUser: FavoriteUser
+        runBlocking {
+            val temp = async {
+                favoriteUserDao.getFavoriteUser(username)
+            }
+            favUser = temp.await()
+        }
+        return favUser
+    }
+
     fun insert(favoriteUser: FavoriteUser) {
         runBlocking {
             favoriteUserDao.insert(favoriteUser)
@@ -25,15 +36,10 @@ class FavoriteUserRepository(application: Application) {
         }
     }
 
-    fun getFavoriteUser(username: String): FavoriteUser {
-        lateinit var favUser: FavoriteUser
+    fun deleteAllFavoriteUsers() {
         runBlocking {
-            val temp = async {
-                favoriteUserDao.getFavoriteUser(username)
-            }
-            favUser = temp.await()
+            favoriteUserDao.deleteAllFavoriteUsers()
         }
-        return favUser
     }
 
     fun isFavoriteUserExists(username: String): Boolean {
