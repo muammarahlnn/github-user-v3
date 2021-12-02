@@ -116,6 +116,9 @@ class MainActivity : AppCompatActivity(), ClickListener<UserResponse> {
 
         // show progressbar
         viewModel.isLoading.observe(this, { isLoading ->
+            // hide recyclerview so progressbar can be seen
+            binding.rvUser.visibility = if (isLoading) View.GONE else View.VISIBLE
+
             Helper.showLoading(binding.progressBar, isLoading)
         })
     }
