@@ -40,5 +40,10 @@ class SettingsActivity : AppCompatActivity() {
         binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
             viewModel.saveThemeSetting(isChecked)
         }
+
+        // click listener
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 }

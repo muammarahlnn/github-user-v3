@@ -52,6 +52,10 @@ class FavoriteUserActivity : AppCompatActivity(), ClickListener<FavoriteUser> {
             }
         })
 
+        // click listener
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
