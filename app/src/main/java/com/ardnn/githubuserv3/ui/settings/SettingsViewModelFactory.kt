@@ -2,7 +2,6 @@ package com.ardnn.githubuserv3.ui.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import java.lang.IllegalArgumentException
 
 class SettingsViewModelFactory(private val pref: SettingsPreferences) :
     ViewModelProvider.NewInstanceFactory() {

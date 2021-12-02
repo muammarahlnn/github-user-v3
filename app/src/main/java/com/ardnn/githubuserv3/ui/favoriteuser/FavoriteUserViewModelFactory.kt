@@ -3,7 +3,6 @@ package com.ardnn.githubuserv3.ui.favoriteuser
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import java.lang.IllegalArgumentException
 
 class FavoriteUserViewModelFactory(
     private val application: Application

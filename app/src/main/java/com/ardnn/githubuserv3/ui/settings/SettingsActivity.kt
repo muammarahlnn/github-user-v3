@@ -1,8 +1,8 @@
 package com.ardnn.githubuserv3.ui.settings
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

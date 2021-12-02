@@ -1,10 +1,10 @@
 package com.ardnn.githubuserv3.ui.userdetail
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ardnn.githubuserv3.R
 import com.ardnn.githubuserv3.api.responses.UserDetailResponse

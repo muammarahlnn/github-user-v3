@@ -2,7 +2,6 @@ package com.ardnn.githubuserv3.ui.userdetail.userfoll
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import java.lang.IllegalArgumentException
 
 class UserFollViewModelFactory(
     private val section: Int,
