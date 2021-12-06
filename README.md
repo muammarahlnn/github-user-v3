@@ -1,2 +1,2 @@
 # github-user-v3
-Submission 3 dicoding's Belajar Fundamental Aplikasi Android class
+Final submission dicoding's Belajar Fundamental Aplikasi Android class
